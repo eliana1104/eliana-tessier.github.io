@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Découvrez le cochon : son mode de vie, son alimentation, son élevage et ses besoins." >
+  <meta name="description" content="Découvrez le cochon : son mode de vie, son alimentation, son élevage et ses besoins.">
   <meta name="theme-color" content="#f6f2eb">
   <title>Le cochon — Portrait &amp; vie à la ferme</title>
   <style>
@@ -14,7 +14,6 @@
       --ink: #303431;
       --muted: #737873;
       --line: #e8e1d7;
-      --stone: #d7d4ce;
       --rose: #e7c2bd;
       --rose-deep: #a76f6b;
       --green: #59665b;
@@ -129,16 +128,19 @@
     .fact strong { display: block; font: 500 1.3rem var(--serif); }
     .fact span { color: var(--muted); font-size: .78rem; letter-spacing: .03em; }
 
-    .section { padding: clamp(65px, 9vw, 112px) 0; }
-    .section-heading { max-width: 650px; margin: 0 auto 46px; text-align: center; }
+    .section { padding: clamp(58px, 7vw, 88px) 0; }
+    .section-heading { max-width: 650px; margin: 0 auto 38px; text-align: center; }
     .section-heading .eyebrow { justify-content: center; }
     h2 { margin: 14px 0 15px; font-size: clamp(2.2rem, 4vw, 3.5rem); letter-spacing: -.035em; }
     .section-heading p { margin: 0; color: var(--muted); }
     .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .feature-card { padding: 29px 27px; background: var(--surface); border: 1px solid var(--line); }
+    .feature-card { overflow: hidden; background: var(--surface); border: 1px solid var(--line); transition: transform .25s ease, box-shadow .25s ease; }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgb(48 52 49 / 9%); }
+    .feature-card img { display: block; width: 100%; height: 175px; object-fit: cover; }
+    .feature-card-copy { padding: 22px 24px 25px; }
     .number { color: var(--rose-deep); font: italic 1.1rem var(--serif); }
-    .feature-card h3 { margin: 18px 0 10px; font-size: 1.5rem; }
-    .feature-card p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .feature-card h3 { margin: 13px 0 9px; font-size: 1.42rem; }
+    .feature-card p { margin: 0; color: var(--muted); font-size: .9rem; }
 
     .story { background: #e9e5de; }
     .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(34px, 7vw, 88px); align-items: center; }
@@ -185,11 +187,20 @@
       .facts { grid-template-columns: 1fr; }
       .fact { border-right: 0; border-bottom: 1px solid #dcd5ca; padding: 17px; }
       .fact:last-child { border-bottom: 0; }
-      .feature-grid { grid-template-columns: 1fr; }
+      .feature-grid { grid-template-columns: 1fr; gap: 16px; }
+      .feature-card { display: grid; grid-template-columns: minmax(110px, .75fr) 1.25fr; align-items: stretch; }
+      .feature-card img { height: 100%; min-height: 175px; }
+      .feature-card-copy { padding: 18px; }
       .story-image img, .food-image img { height: min(78vw, 380px); }
       .food-note { left: 8px; }
       .young-card { grid-template-columns: 1fr; }
       .young-card img { height: min(75vw, 360px); }
+    }
+    @media (max-width: 430px) {
+      .feature-card { grid-template-columns: 1fr; }
+      .feature-card img { height: 190px; min-height: 0; }
+      .feature-card-copy { padding: 19px 21px 22px; }
+      .food-list { grid-template-columns: 1fr; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -245,19 +256,28 @@
       </div>
       <div class="feature-grid">
         <article class="feature-card">
-          <span class="number">01 / Ses sens</span>
-          <h3>Un nez remarquable</h3>
-          <p>Son odorat l’aide à repérer des odeurs et à fouiller le sol. Son groin est un outil précieux pour découvrir ce qui l’entoure.</p>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Domestic_Pig_%2837375669345%29.jpg" alt="Portrait rapproché d’un cochon" loading="lazy">
+          <div class="feature-card-copy">
+            <span class="number">01 / Ses sens</span>
+            <h3>Un nez remarquable</h3>
+            <p>Son odorat l’aide à repérer les odeurs et à fouiller le sol. Son groin est un outil précieux pour découvrir ce qui l’entoure.</p>
+          </div>
         </article>
         <article class="feature-card">
-          <span class="number">02 / Son caractère</span>
-          <h3>Curieux et malin</h3>
-          <p>Il peut apprendre des habitudes, résoudre de petits problèmes et reconnaître les personnes qu’il côtoie.</p>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Piglets-2736051.jpg" alt="Des porcelets curieux qui explorent ensemble" loading="lazy">
+          <div class="feature-card-copy">
+            <span class="number">02 / Son caractère</span>
+            <h3>Curieux et malin</h3>
+            <p>Il peut apprendre des habitudes, résoudre de petits problèmes et reconnaître les personnes qu’il côtoie.</p>
+          </div>
         </article>
         <article class="feature-card">
-          <span class="number">03 / Sa vie sociale</span>
-          <h3>Bien entouré</h3>
-          <p>Les cochons communiquent entre eux et apprécient les interactions. Ils ont besoin d’un cadre calme et stimulant.</p>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Pig_farms.jpg" alt="Des cochons réunis dans leur espace de vie" loading="lazy">
+          <div class="feature-card-copy">
+            <span class="number">03 / Sa vie sociale</span>
+            <h3>Bien entouré</h3>
+            <p>Les cochons communiquent entre eux et apprécient les interactions. Ils ont besoin d’un cadre calme et stimulant.</p>
+          </div>
         </article>
       </div>
     </section>
