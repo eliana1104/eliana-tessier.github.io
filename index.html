@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le monde des cochons</title>
+  <style>
+    :root {
+      --beige: #f3eadb;
+      --beige-fonce: #ddd0b8;
+      --gris: #626663;
+      --gris-clair: #e7e8e5;
+      --rose: #efc9c6;
+      --rose-fonce: #bd8580;
+      --blanc: #fffdf9;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #40433f;
+      background: var(--beige);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--gris) 0%, #858a86 100%);
+      color: var(--blanc);
+      text-align: center;
+      padding: 75px 20px;
+      border-bottom: 8px solid var(--rose);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      letter-spacing: 2px;
+    }
+
+    header p {
+      max-width: 650px;
+      margin: 15px auto 0;
+      font-size: 1.15rem;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 12px;
+      background: rgba(255, 253, 249, 0.96);
+      box-shadow: 0 3px 12px rgba(64, 67, 63, 0.12);
+    }
+
+    nav a {
+      color: var(--gris);
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 14px;
+      border-radius: 20px;
+    }
+
+    nav a:hover { background: var(--rose); }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 45px 20px;
+    }
+
+    section {
+      margin-bottom: 35px;
+      padding: 38px;
+      background: var(--blanc);
+      border-radius: 24px;
+      box-shadow: 0 8px 25px rgba(98, 102, 99, 0.10);
+    }
+
+    section:nth-of-type(even) { background: #faf5ef; }
+
+    h2 {
+      margin-top: 0;
+      color: var(--rose-fonce);
+      border-bottom: 2px solid var(--rose);
+      padding-bottom: 8px;
+      font-size: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      align-items: center;
+    }
+
+    .photo {
+      width: 100%;
+      height: 310px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 6px solid var(--gris-clair);
+    }
+
+    .carte {
+      background: var(--rose);
+      border-radius: 16px;
+      padding: 18px 22px;
+      margin: 12px 0;
+    }
+
+    ul { padding-left: 22px; }
+
+    li { margin: 8px 0; }
+
+    .sources {
+      background: var(--gris);
+      color: var(--blanc);
+    }
+
+    .sources h2 { color: var(--rose); border-color: #a9aea9; }
+
+    .sources a { color: var(--rose); }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #d6c9b2;
+      color: var(--gris);
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 55px 15px; }
+      section { padding: 24px 18px; }
+      .photo { height: 240px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Le monde des cochons</h1>
+    <p>Découvre ces animaux curieux, intelligents et sociables.</p>
+  </header>
+
+  <nav aria-label="Navigation principale">
+    <a href="#portrait">Portrait</a>
+    <a href="#elevage">Élevage</a>
+    <a href="#alimentation">Alimentation</a>
+    <a href="#porcelets">Porcelets</a>
+  </nav>
+
+  <main>
+    <section id="portrait">
+      <h2>Portrait du cochon</h2>
+      <div class="grid">
+        <img class="photo" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Domestic_Pig_%2837375669345%29.jpg" alt="Cochon domestique dans un environnement naturel">
+        <div>
+          <p>Le cochon est un mammifère domestique intelligent et sociable. Son odorat très développé lui permet de fouiller le sol avec son groin pour chercher de la nourriture.</p>
+          <div class="carte"><strong>Une mémoire remarquable :</strong> les cochons peuvent reconnaître des personnes et apprendre des jeux.</div>
+          <div class="carte"><strong>Des couleurs variées :</strong> rose, noire, blanche, rousse ou tachetée selon les races.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="elevage">
+      <h2>Comment sont élevés les cochons ?</h2>
+      <div class="grid">
+        <div>
+          <p>Dans un élevage responsable, les cochons disposent d’un environnement adapté à leur âge, leur race et leurs besoins.</p>
+          <ul>
+            <li>De l’eau fraîche en permanence</li>
+            <li>Une alimentation équilibrée</li>
+            <li>Un abri contre le froid, la chaleur et la pluie</li>
+            <li>Assez d’espace pour marcher et se reposer</li>
+            <li>Des soins vétérinaires réguliers</li>
+            <li>De la paille ou une surface propre pour dormir</li>
+          </ul>
+        </div>
+        <img class="photo" src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Pig_farms.jpg" alt="Cochons dans un élevage">
+      </div>
+    </section>
+
+    <section id="alimentation">
+      <h2>Que mangent les cochons ?</h2>
+      <div class="grid">
+        <img class="photo" src="https://upload.wikimedia.org/wikipedia/commons/1/14/Farm_Pigs_Feeding.jpg" alt="Cochons mangeant à la ferme">
+        <div>
+          <p>Les cochons sont omnivores. Leur repas doit être complet et adapté à leur âge et à leur croissance.</p>
+          <ul>
+            <li>Céréales</li>
+            <li>Légumineuses</li>
+            <li>Légumes et racines</li>
+            <li>Vitamines et minéraux</li>
+            <li>Beaucoup d’eau propre</li>
+          </ul>
+          <p><strong>Attention :</strong> le chocolat, les aliments avariés ou contenant des substances toxiques peuvent être dangereux.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="porcelets">
+      <h2>Les petits cochons</h2>
+      <div class="grid">
+        <div>
+          <p>Les petits cochons sont appelés des porcelets ou des cochonnets. À la naissance, ils restent près de leur mère et du reste du groupe.</p>
+          <p>En grandissant, ils commencent à explorer leur environnement, à jouer, à fouiller le sol et à manger progressivement comme les adultes.</p>
+        </div>
+        <img class="photo" src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Piglets-2736051.jpg" alt="Plusieurs porcelets ensemble">
+      </div>
+    </section>
+
+    <section class="sources">
+      <h2>Sources des images</h2>
+      <ul>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Domestic_Pig_(37375669345).jpg">Cochon domestique — Wikimedia Commons</a></li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Pig_farms.jpg">Élevage de cochons — Wikimedia Commons</a></li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Farm_Pigs_Feeding.jpg">Cochons au repas — Wikimedia Commons</a></li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Piglets-2736051.jpg">Porcelets — Wikimedia Commons</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    Page informative sur les cochons • Design beige, gris et rose
+  </footer>
+</body>
+</html>
